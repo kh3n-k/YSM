@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#ffd1ff);
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+}
+
+.gift{
+    font-size:120px;
+    cursor:pointer;
+    animation:bounce 1.5s infinite;
+    transition:.5s;
+}
+
+.gift:hover{
+    transform:scale(1.15);
+}
+
+.message{
+    display:none;
+    margin-top:20px;
+    color:#fff;
+    font-size:32px;
+    font-weight:bold;
+    text-shadow:2px 2px 5px rgba(0,0,0,.3);
+    animation:fadeIn 1s;
+}
+
+#message2{
+    font-size:42px;
+    color:gold;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="gift" id="gift">🎁</div>
+
+    <div id="message1" class="message">
+        🙏 Thanks God for another year of life.
+    </div>
+
+    <div id="message2" class="message">
+        🎉 Happy Birthday to Me! 🎂
+    </div>
+</div>
+
+<script>
+const gift = document.getElementById("gift");
+const message1 = document.getElementById("message1");
+const message2 = document.getElementById("message2");
+
+gift.addEventListener("click", function(){
+
+    gift.innerHTML = "🎊";
+    gift.style.animation = "none";
+    gift.style.transform = "scale(1.2)";
+
+    message1.style.display = "block";
+
+    setTimeout(function(){
+        message2.style.display = "block";
+    },3000);
+
+});
+</script>
+
+</body>
+</html>
